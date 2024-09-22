@@ -1,0 +1,162 @@
+.App{
+  text-align: center;
+  margin-top: 10px;
+}
+/* Seat Layout */
+.seat-layout {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 seats per row */
+  grid-gap: 10px;
+  margin: 20px 0;
+  justify-items: center;
+}
+ul{
+  list-style: none;
+}
+li{
+  display: inline-block;
+  margin-right: 10px;
+
+}
+/* Seat Button Styling */
+.seat {
+  width: 40px;
+  height: 40px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Seat Hover Effect */
+.seat:hover {
+  transform: scale(1.1);
+}
+
+/* Booked Seat */
+.seat.booked {
+  background-color: #ff6666;
+  cursor: not-allowed;
+}
+
+/* Selected Seat */
+.seat.selected {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+/* Available Seat */
+.seat:not(.booked):not(.selected) {
+  background-color: #f0f0f0;
+}
+
+/* Seat Number Text */
+.seat:disabled {
+  color: #fff;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.legend-box {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 2px solid #ccc;
+}
+
+.legend-available {
+  background-color: #f0f0f0;
+}
+
+.legend-booked {
+  background-color: #ff6666;
+}
+
+.legend-selected {
+  background-color: #4caf50;
+}
+
+/* Booked/Available Seats Display */
+.booked-seats, .available-seats {
+  margin-top: 20px;
+}
+
+.booked-seats h3, .available-seats h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.seat-info {
+  margin-top: 5px;
+}
+
+.seat-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.seat-info li {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+/* Booking Button */
+.booking-button {
+  background: linear-gradient(45deg, #4caf50, #8bc34a); /* Gradient for the button */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px; /* Rounded corners */
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin: 20px auto;
+  text-transform: uppercase; /* Capitalized letters */
+  text-align: center;
+}
+
+/* Hover Effect */
+.booking-button:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Elevated shadow */
+  background: linear-gradient(45deg, #43a047, #7cb342); /* Darker gradient on hover */
+}
+
+/* Focus Effect */
+.booking-button:focus {
+  outline: none;
+  box-shadow: 0 0 10px #4caf50; /* Green glow when focused */
+}
+
+/* Disabled Button */
+.booking-button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .seat-layout {
+    grid-template-columns: repeat(4, 1fr); /* 4 seats per row on smaller screens */
+  }
+}
