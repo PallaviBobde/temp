@@ -12,6 +12,7 @@ const App = () => {
   useEffect(() => {
     const fetchSeats = async () => {
       const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_BASEURL}/api/seats`);
+      console.log("Fetching from:", `${process.env.REACT_APP_BACKEND_BASEURL}/api/seats`); // Log the URL
       setSeats(data);
     };
     fetchSeats();
