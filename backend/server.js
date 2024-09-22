@@ -5,7 +5,7 @@ const connectDB = require('./config/db');
 const seatRoutes = require('./routes/seatRoutes');
 const { initializeSeats } = require('./controllers/seatController');
 
-
+const app = express();
 app.use(cors({
   origin: 'https://train-seat-reservation-system-4san.vercel.app/', // Allow requests only from your frontend domain
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -14,7 +14,7 @@ app.use(cors({
 dotenv.config();
 connectDB();
 
-const app = express();
+
 initializeSeats({}, { status: () => ({ json: () => {} }) });
 app.use(express.json());
 app.use(cors());
