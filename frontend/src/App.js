@@ -11,7 +11,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchSeats = async () => {
-      const { data } = await axios.get(`https://train-seat-reservation-syst-git-b85bdc-nikets-projects-8738e377.vercel.app//api/seats`);
+      const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_BASEURL}/api/seats`);
       setSeats(data);
     };
     fetchSeats();
@@ -33,7 +33,7 @@ const App = () => {
       return;
     }
 
-    const response = await axios.post(`https://train-seat-reservation-syst-git-b85bdc-nikets-projects-8738e377.vercel.app//api/seats/book`, {
+    const response = await axios.post(`${process.env.REACT_APP_BACKEND_BASEURL}/api/seats/book`, {
       numSeats: selectedSeats.length, // Use the length of selected seats
       seatNumbers: selectedSeats, // Send the specific seat numbers
     });
